@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FY2026 Q2 阶段性战报 · 南粤二区</title>
+<style>
+  :root{
+    --bg-0:#f4f7fc; --bg-1:#e9eff8; --bg-2:#e2eaf6;
+    --card:#ffffff; --card-border:#dfe7f2; --card-shadow:0 6px 24px rgba(31,78,140,.07);
+    --text:#1c2b45; --text-dim:#5a6b85; --text-faint:#8a99b3;
+    --accent:#1f4e8c; --accent-2:#d97e24; --accent-3:#0e9fb0;
+    --gold:#f0a02e; --gold-bg:#fff6e8; --silver:#8a9bb5; --bronze:#c47a5c;
+    --good:#1a9e62; --warn:#d97e24; --danger:#d64545; --danger-bg:#fdf1f0; --danger-line:#f3c9c7;
+    --line:#e8eef6;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:
+      radial-gradient(1100px 500px at 90% -8%,rgba(14,159,176,.10),transparent 55%),
+      radial-gradient(900px 460px at -8% 25%,rgba(217,126,36,.08),transparent 55%),
+      linear-gradient(165deg,var(--bg-0),var(--bg-1) 55%,var(--bg-2));
+    color:var(--text); min-height:100vh; padding:28px 14px 48px;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  /* ── 头部 ── */
+  .hero{
+    position:relative; background:var(--card); border:1px solid var(--card-border);
+    border-radius:20px; padding:30px 28px 26px; overflow:hidden; box-shadow:var(--card-shadow);
+  }
+  .hero::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg,var(--accent-3),var(--accent) 45%,var(--accent-2));
+  }
+  .hero::after{
+    content:""; position:absolute; inset:auto -50px -80px auto; width:240px; height:240px;
+    background:radial-gradient(circle,rgba(31,78,140,.08),transparent 65%); border-radius:50%;
+  }
+  .kicker{font-size:12px;letter-spacing:.28em;color:var(--accent-3);font-weight:700;margin-bottom:10px;}
+  .hero h1{font-size:30px;font-weight:800;letter-spacing:.02em;line-height:1.25;color:var(--accent);}
+  .hero h1 em{font-style:normal;color:var(--accent-2);}
+  .hero .sub{margin-top:8px;color:var(--text-dim);font-size:13px;}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative;z-index:1;}
+  .badge{
+    font-size:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--card-border);
+    background:var(--bg-0);color:var(--text-dim);font-weight:500;
+  }
+  .badge.hl{border-color:#f0c893;background:var(--gold-bg);color:#a8641a;font-weight:600;}
+  /* ── 区块 ── */
+  .sec{margin-top:26px;}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .sec-head .no{
+    width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-3));
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;
+  }
+  .sec-head h2{font-size:17px;font-weight:700;letter-spacing:.04em;color:var(--text);}
+  .sec-head .note{margin-left:auto;font-size:11px;color:var(--text-faint);}
+  .card{
+    background:var(--card); border:1px solid var(--card-border); border-radius:16px;
+    padding:18px 20px; box-shadow:var(--card-shadow);
+  }
+  /* ── 综合排名 ── */
+  .rank-row{
+    display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px;
+    padding:12px 4px;border-bottom:1px solid var(--line);
+  }
+  .rank-row:last-child{border-bottom:none;}
+  .medal{
+    width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:15px;font-family:var(--mono);
+  }
+  .medal.m1{background:linear-gradient(135deg,#ffd166,#f0a02e);color:#3a2400;}
+  .medal.m2{background:linear-gradient(135deg,#eef3fa,#a9bad2);color:#2b3a55;}
+  .medal.m3{background:linear-gradient(135deg,#f0c3a8,#c47a5c);color:#3c1f10;}
+  .medal.other{background:var(--bg-0);color:var(--text-dim);border:1px solid var(--card-border);}
+  .r-info{min-width:0;}
+  .r-name{font-size:15px;font-weight:700;color:var(--text);}
+  .r-name .tag{
+    font-size:10px;font-weight:600;color:#a8641a;border:1px solid #f0c893;background:var(--gold-bg);
+    padding:1px 6px;border-radius:6px;margin-left:6px;vertical-align:1px;
+  }
+  .r-name .tag.warn{color:var(--danger);border-color:var(--danger-line);background:var(--danger-bg);}
+  .r-meta{margin-top:3px;font-size:11px;color:var(--text-faint);font-family:var(--mono);}
+  .r-score{text-align:right;}
+  .r-score b{font-size:22px;font-family:var(--mono);font-weight:800;color:var(--accent);}
+  .r-score .full{font-size:11px;color:var(--text-faint);}
+  .bar{width:120px;height:5px;background:var(--bg-1);border-radius:3px;margin-top:5px;overflow:hidden;margin-left:auto;}
+  .bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent-3),var(--accent));}
+  /* ── 维度表格 ── */
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th{font-size:11px;color:var(--text-faint);font-weight:600;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);letter-spacing:.06em;}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--text);}
+  tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-family:var(--mono);}
+  .hi{color:var(--good);font-weight:700;}
+  .mid{color:var(--warn);font-weight:700;}
+  .lo{color:var(--danger);font-weight:700;}
+  .rankchip{display:inline-block;min-width:30px;text-align:center;padding:2px 7px;border-radius:7px;background:var(--bg-0);font-family:var(--mono);font-size:12px;color:var(--text-dim);}
+  /* ── 预警 ── */
+  .warn-card{border:1px solid var(--danger-line);background:var(--danger-bg);}
+  .warn-item{display:flex;gap:12px;padding:12px 2px;border-bottom:1px solid rgba(214,69,69,.12);}
+  .warn-item:last-child{border-bottom:none;}
+  .warn-icon{flex:0 0 22px;height:22px;border-radius:7px;background:rgba(214,69,69,.12);color:var(--danger);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .warn-item p{font-size:13px;line-height:1.65;color:var(--text);}
+  .warn-item p b{color:var(--danger);}
+  /* ── 页脚 ── */
+  .foot{margin-top:26px;padding:16px 20px;border:1px dashed #cfd9e8;border-radius:14px;font-size:11px;color:var(--text-faint);line-height:1.8;background:rgba(255,255,255,.5);}
+  .foot b{color:var(--text-dim);}
+  @media (max-width:520px){
+    .hero h1{font-size:24px;}
+    .bar{width:90px;}
+    .r-score b{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 头部 -->
+  <div class="hero">
+    <div class="kicker">BEISEN QUARTERLY PERFORMANCE REPORT</div>
+    <h1>FY2026 Q2 阶段性战报<em> · 南粤二区</em></h1>
+    <div class="sub">数据截止：2026-07-31 ｜ 覆盖维度：季度旅程目标 / 续约目标完成率 / 线下覆盖与工时</div>
+    <div class="badges">
+      <span class="badge hl">覆盖维度 1/2/3</span>
+      <span class="badge">维度 4–7 待数据</span>
+      <span class="badge">综合得分满分 70</span>
+      <span class="badge">排名范围：南粤二区 / 二部全国</span>
+    </div>
+  </div>
+
+  <!-- 一、综合排名 -->
+  <div class="sec">
+    <div class="sec-head"><span class="no">1</span><h2>北森综合得分排名</h2><span class="note">维度得分×权重 · 完成率档内插值</span></div>
+    <div class="card">
+      <div class="rank-row">
+        <div class="medal m1">1</div>
+        <div class="r-info">
+          <div class="r-name">刘翱搏</div>
+          <div class="r-meta">D1 80.0 · D2 不考核 · D3 100.0</div>
+        </div>
+        <div class="r-score"><b>62.00</b><div class="full">/ 70</div><div class="bar"><i style="width:88.6%"></i></div></div>
+      </div>
+      <div class="rank-row">
+        <div class="medal m2">2</div>
+        <div class="r-info">
+          <div class="r-name">孟旭</div>
+          <div class="r-meta">D1 100.0 · D2 80.0 · D3 75.1</div>
+        </div>
+        <div class="r-score"><b>61.01</b><div class="full">/ 70</div><div class="bar"><i style="width:87.2%"></i></div></div>
+      </div>
+      <div class="rank-row">
+        <div class="medal m3">3</div>
+        <div class="r-info">
+          <div class="r-name">罗杰<span class="tag">高职级</span></div>
+          <div class="r-meta">D1 81.0 · D2 80.0 · D3 47.1</div>
+        </div>
+        <div class="r-score"><b>49.72</b><div class="full">/ 70</div><div class="bar"><i style="width:71.0%"></i></div></div>
+      </div>
+      <div class="rank-row">
+        <div class="medal other">4</div>
+        <div class="r-info">
+          <div class="r-name">胡一东</div>
+          <div class="r-meta">D1 65.8 · D2 100.0 · D3 43.3</div>
+        </div>
+        <div class="r-score"><b>48.42</b><div class="full">/ 70</div><div class="bar"><i style="width:69.2%"></i></div></div>
+      </div>
+      <div class="rank-row">
+        <div class="medal other">5</div>
+        <div class="r-info">
+          <div class="r-name">陈开洪</div>
+          <div class="r-meta">D1 76.1 · D2 60.0 · D3 67.8</div>
+        </div>
+        <div class="r-score"><b>48.40</b><div class="full">/ 70</div><div class="bar"><i style="width:69.1%"></i></div></div>
+      </div>
+      <div class="rank-row">
+        <div class="medal other">6</div>
+        <div class="r-info">
+          <div class="r-name">林汉敏</div>
+          <div class="r-meta">D1 60.0 · D2 68.0 · D3 80.0</div>
+        </div>
+        <div class="r-score"><b>47.60</b><div class="full">/ 70</div><div class="bar"><i style="width:68.0%"></i></div></div>
+      </div>
+      <div class="rank-row">
+        <div class="medal other">7</div>
+        <div class="r-info">
+          <div class="r-name">马苑婷</div>
+          <div class="r-meta">D1 50.0 · D2 50.0 · D3 42.9</div>
+        </div>
+        <div class="r-score"><b>33.58</b><div class="full">/ 70</div><div class="bar"><i style="width:48.0%"></i></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 二、维度明细 -->
+  <div class="sec">
+    <div class="sec-head"><span class="no">2</span><h2>维度1 季度旅程目标</h2><span class="note"><a href="detail.html#dim1" style="color:#0e9fb0;text-decoration:none;font-weight:600">查看详细数据 →</a> ｜ 权重30% · 刘翱搏40%</span></div>
+    <div class="card">
+      <table>
+        <tr><th>排名</th><th>成员</th><th class="num">完成率</th><th class="num">维度得分</th></tr>
+        <tr><td><span class="rankchip">1</span></td><td>孟旭</td><td class="num hi">85.30%</td><td class="num">100.00</td></tr>
+        <tr><td><span class="rankchip">2</span></td><td>罗杰</td><td class="num hi">81.39%</td><td class="num">81.00</td></tr>
+        <tr><td><span class="rankchip">3</span></td><td>刘翱搏</td><td class="num mid">74.87%</td><td class="num">80.00</td></tr>
+        <tr><td><span class="rankchip">4</span></td><td>陈开洪</td><td class="num mid">72.83%</td><td class="num">76.13</td></tr>
+        <tr><td><span class="rankchip">5</span></td><td>胡一东</td><td class="num mid">67.40%</td><td class="num">65.84</td></tr>
+        <tr><td><span class="rankchip">6</span></td><td>林汉敏</td><td class="num mid">64.32%</td><td class="num">60.00</td></tr>
+        <tr><td><span class="rankchip">7</span></td><td>马苑婷</td><td class="num lo">63.61%</td><td class="num">50.00</td></tr>
+      </table>
+      <div class="foot" style="margin-top:12px"><b>口径：</b>临期15% / 存量40% / 存量一体化25%（新签0%），实际÷目标×100%，完成率不封顶；前30%档81–100分、中档60–80分、后20%档0–50分，档内按完成率插值。</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="no">3</span><h2>维度2 续约目标完成率</h2><span class="note"><a href="detail.html#dim2" style="color:#0e9fb0;text-decoration:none;font-weight:600">查看详细数据 →</a> ｜ 权重20% · 刘翱搏不考核 · S1季度口径</span></div>
+    <div class="card">
+      <table>
+        <tr><th>排名</th><th>成员</th><th class="num">完成率</th><th class="num">维度得分</th></tr>
+        <tr><td><span class="rankchip">1</span></td><td>胡一东</td><td class="num hi">112.50%</td><td class="num">100.00</td></tr>
+        <tr><td><span class="rankchip">2</span></td><td>孟旭</td><td class="num hi">100.00%</td><td class="num">80.00</td></tr>
+        <tr><td><span class="rankchip">3</span></td><td>罗杰</td><td class="num hi">100.00%</td><td class="num">80.00</td></tr>
+        <tr><td><span class="rankchip">4</span></td><td>林汉敏</td><td class="num mid">90.00%</td><td class="num">68.02</td></tr>
+        <tr><td><span class="rankchip">5</span></td><td>陈开洪</td><td class="num mid">83.30%</td><td class="num">60.00</td></tr>
+        <tr><td><span class="rankchip">6</span></td><td>马苑婷</td><td class="num lo">72.70%</td><td class="num">50.00</td></tr>
+      </table>
+      <div class="foot" style="margin-top:12px"><b>口径：</b>S1（5–9月到期客户）续约进展按整个季度统计；6人排名，0.8N法分档（前1/中4/后1），档内按完成率插值。</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="no">4</span><h2>维度3 季度线下客户覆盖量和客户服务工时</h2><span class="note"><a href="detail.html#dim3" style="color:#0e9fb0;text-decoration:none;font-weight:600">查看详细数据 →</a> ｜ 权重20% · 刘翱搏30% · 二部全国49人</span></div>
+    <div class="card">
+      <table>
+        <tr><th>全国位次</th><th>成员</th><th class="num">覆盖完成率</th><th class="num">工时完成率</th><th class="num">综合完成率</th><th class="num">维度得分</th></tr>
+        <tr><td><span class="rankchip">1</span></td><td>刘翱搏</td><td class="num hi">150.0%</td><td class="num hi">140.0%</td><td class="num hi">145.00%</td><td class="num">100.00</td></tr>
+        <tr><td><span class="rankchip">17</span></td><td>林汉敏</td><td class="num">104.4%</td><td class="num">121.1%</td><td class="num">112.78%</td><td class="num">79.96</td></tr>
+        <tr><td><span class="rankchip">19</span></td><td>孟旭</td><td class="num">106.7%</td><td class="num">116.7%</td><td class="num">111.67%</td><td class="num">75.07</td></tr>
+        <tr><td><span class="rankchip">24</span></td><td>陈开洪</td><td class="num">104.4%</td><td class="num">115.6%</td><td class="num">110.00%</td><td class="num">67.80</td></tr>
+        <tr><td><span class="rankchip">34</span></td><td>罗杰<span class="tag warn">封顶</span></td><td class="num">97.8%</td><td class="num">111.1%</td><td class="num">104.44%</td><td class="num">47.08</td></tr>
+        <tr><td><span class="rankchip">42</span></td><td>胡一东</td><td class="num">104.4%</td><td class="num">94.4%</td><td class="num">99.44%</td><td class="num">43.32</td></tr>
+        <tr><td><span class="rankchip">43</span></td><td>马苑婷</td><td class="num">100.0%</td><td class="num">97.8%</td><td class="num">98.89%</td><td class="num">42.91</td></tr>
+      </table>
+      <div class="foot" style="margin-top:12px"><b>口径：</b>覆盖（不去重）与工时各占50%，二部全国49人排名；前20%=10人90–100分，其后各5人，后50%0–50分；罗杰后50%触发高职级封顶≤60分。</div>
+    </div>
+  </div>
+
+  <!-- 五、风险预警 -->
+  <div class="sec">
+    <div class="sec-head"><span class="no">5</span><h2>风险预警</h2></div>
+    <div class="card warn-card">
+      <div class="warn-item">
+        <div class="warn-icon">!</div>
+        <p><b>罗杰（高职级）</b>：维度3（季度线下客户覆盖量和客户服务工时）全国第34/49、位于后50%，触发高职级封顶条款——该项最高不超过60分（实得47.08分）；该维度覆盖量完成率97.8%，是两项指标中唯一未达标项。</p>
+      </div>
+      <div class="warn-item">
+        <div class="warn-icon">!</div>
+        <p><b>马苑婷</b>：维度1（季度旅程目标）垫底（后20%档）、维度2（续约目标完成率）垫底（72.7%）、维度3（季度线下客户覆盖量和客户服务工时）后50%——三项全面落后，综合得分33.58为7人最低，为主要风险点。</p>
+      </div>
+      <div class="warn-item">
+        <div class="warn-icon">!</div>
+        <p><b>胡一东</b>：维度2（续约目标完成率）领先（112.5%），但维度3（季度线下客户覆盖量和客户服务工时）工时完成率94.4%未达标（覆盖104.4%已达标），工时存在缺口。</p>
+      </div>
+      <div class="warn-item">
+        <div class="warn-icon">!</div>
+        <p><b>刘翱搏</b>：维度3（季度线下客户覆盖量和客户服务工时）全国第1（145%）为最大亮点；维度1（季度旅程目标）中游；维度2（续约目标完成率）本季不考核，权重已转移至维度1/3。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="foot">
+    <b>说明：</b>维度4（AI深度服务）、维度5（AI产出）、维度6（OK币）、维度7（月考）数据待到位，当前综合得分为维度1/2/3合计（满分70），完整总分待补齐后更新。<br>
+    <b>排名范围：</b>维度1/2 南粤二区内部排名；维度3 客户成功二部全国排名。<br>
+    <b>数据截止：</b>2026-07-31 ｜ 生成：2026-08-06 ｜ 计算口径详见规则确认文件，全部可溯源。
+  </div>
+
+</div>
+</body>
+</html>
