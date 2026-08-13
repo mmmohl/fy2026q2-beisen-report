@@ -25,7 +25,6 @@
     color:var(--text); min-height:100vh; padding:28px 14px 48px;
   }
   .wrap{max-width:760px;margin:0 auto;}
-  /* ── 头部 ── */
   .hero{
     position:relative; background:var(--card); border:1px solid var(--card-border);
     border-radius:20px; padding:30px 28px 26px; overflow:hidden; box-shadow:var(--card-shadow);
@@ -48,7 +47,6 @@
     background:var(--bg-0);color:var(--text-dim);font-weight:500;
   }
   .badge.hl{border-color:#f0c893;background:var(--gold-bg);color:#a8641a;font-weight:600;}
-  /* ── 区块 ── */
   .sec{margin-top:26px;}
   .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
   .sec-head .no{
@@ -61,7 +59,6 @@
     background:var(--card); border:1px solid var(--card-border); border-radius:16px;
     padding:18px 20px; box-shadow:var(--card-shadow);
   }
-  /* ── 综合排名 ── */
   .rank-row{
     display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px;
     padding:12px 4px;border-bottom:1px solid var(--line);
@@ -88,7 +85,6 @@
   .r-score .full{font-size:11px;color:var(--text-faint);}
   .bar{width:120px;height:5px;background:var(--bg-1);border-radius:3px;margin-top:5px;overflow:hidden;margin-left:auto;}
   .bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent-3),var(--accent));}
-  /* ── 维度表格 ── */
   table{width:100%;border-collapse:collapse;font-size:13px;}
   th{font-size:11px;color:var(--text-faint);font-weight:600;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);letter-spacing:.06em;}
   td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--text);}
@@ -98,16 +94,15 @@
   .mid{color:var(--warn);font-weight:700;}
   .lo{color:var(--danger);font-weight:700;}
   .rankchip{display:inline-block;min-width:30px;text-align:center;padding:2px 7px;border-radius:7px;background:var(--bg-0);font-family:var(--mono);font-size:12px;color:var(--text-dim);}
-  /* ── 预警 ── */
   .warn-card{border:1px solid var(--danger-line);background:var(--danger-bg);}
   .warn-item{display:flex;gap:12px;padding:12px 2px;border-bottom:1px solid rgba(214,69,69,.12);}
   .warn-item:last-child{border-bottom:none;}
   .warn-icon{flex:0 0 22px;height:22px;border-radius:7px;background:rgba(214,69,69,.12);color:var(--danger);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;}
   .warn-item p{font-size:13px;line-height:1.65;color:var(--text);}
   .warn-item p b{color:var(--danger);}
-  /* ── 页脚 ── */
   .foot{margin-top:26px;padding:16px 20px;border:1px dashed #cfd9e8;border-radius:14px;font-size:11px;color:var(--text-faint);line-height:1.8;background:rgba(255,255,255,.5);}
   .foot b{color:var(--text-dim);}
+  a{color:var(--accent-3);}
   @media (max-width:520px){
     .hero h1{font-size:24px;}
     .bar{width:90px;}
@@ -127,7 +122,7 @@
       <span class="badge hl">覆盖维度 1/2/3</span>
       <span class="badge">维度 4–7 待数据</span>
       <span class="badge">综合得分满分 70</span>
-      <span class="badge">排名范围：南粤二区 / 二部全国</span>
+      <span class="badge">排名范围：南粤二区 / 二部全国47人</span>
     </div>
   </div>
 
@@ -196,10 +191,10 @@
 
   <!-- 二、维度明细 -->
   <div class="sec">
-    <div class="sec-head"><span class="no">2</span><h2>维度1 季度旅程目标</h2><span class="note"><a href="detail.html#dim1" style="color:#0e9fb0;text-decoration:none;font-weight:600">查看详细数据 →</a> ｜ 权重30% · 刘翱搏40%</span></div>
+    <div class="sec-head"><span class="no">2</span><h2>维度1 季度旅程目标</h2><span class="note"><a href="detail.html#dim1">查看详细数据 →</a> ｜ 权重30% · 刘翱搏40%</span></div>
     <div class="card">
       <table>
-        <tr><th>排名</th><th>成员</th><th class="num">完成率</th><th class="num">维度得分</th></tr>
+        <tr><th>排名</th><th>成员</th><th class="num">季度完成率</th><th class="num">维度得分</th></tr>
         <tr><td><span class="rankchip">1</span></td><td>孟旭</td><td class="num hi">75.80%</td><td class="num">100.00</td></tr>
         <tr><td><span class="rankchip">2</span></td><td>陈开洪</td><td class="num hi">71.55%</td><td class="num">81.00</td></tr>
         <tr><td><span class="rankchip">3</span></td><td>罗杰</td><td class="num mid">71.40%</td><td class="num">80.00</td></tr>
@@ -208,12 +203,12 @@
         <tr><td><span class="rankchip">6</span></td><td>马苑婷</td><td class="num mid">66.36%</td><td class="num">60.00</td></tr>
         <tr><td><span class="rankchip">7</span></td><td>林汉敏</td><td class="num lo">65.23%</td><td class="num">50.00</td></tr>
       </table>
-      <div class="foot" style="margin-top:12px"><b>口径：</b>临期15% / 存量40% / 存量一体化25%（新签0%），实际÷目标×100%，完成率不封顶；季度完成率=7月、8月完成率简单平均；前30%档81–100分、中档60–80分、后20%档0–50分，档内按完成率插值。</div>
+      <div class="foot" style="margin-top:12px"><b>口径：</b>临期15% / 存量40% / 存量一体化25%（新签0%），完成率=实际÷目标，不封顶；季度完成率=7月、8月完成率加总平均；前30%档81–100分、中档60–80分、后20%档0–50分，档内按完成率插值。</div>
     </div>
   </div>
 
   <div class="sec">
-    <div class="sec-head"><span class="no">3</span><h2>维度2 续约目标完成率</h2><span class="note"><a href="detail.html#dim2" style="color:#0e9fb0;text-decoration:none;font-weight:600">查看详细数据 →</a> ｜ 权重20% · 刘翱搏不考核 · S1季度口径</span></div>
+    <div class="sec-head"><span class="no">3</span><h2>维度2 续约目标完成率</h2><span class="note"><a href="detail.html#dim2">查看详细数据 →</a> ｜ 权重20% · 刘翱搏不考核 · S1季度口径</span></div>
     <div class="card">
       <table>
         <tr><th>排名</th><th>成员</th><th class="num">完成率</th><th class="num">维度得分</th></tr>
@@ -224,24 +219,24 @@
         <tr><td><span class="rankchip">5</span></td><td>林汉敏</td><td class="num mid">90.00%</td><td class="num">60.00</td></tr>
         <tr><td><span class="rankchip">6</span></td><td>马苑婷</td><td class="num lo">72.70%</td><td class="num">50.00</td></tr>
       </table>
-      <div class="foot" style="margin-top:12px"><b>口径：</b>S1（5–9月到期客户）续约进展按整个季度统计；6人排名，0.8N法分档（前1/中4/后1），档内按完成率插值。</div>
+      <div class="foot" style="margin-top:12px"><b>口径：</b>S1（5–9月到期客户）按整个季度统计；6人排名，0.8N法分档（前1/中4/后1），档内按完成率插值。</div>
     </div>
   </div>
 
   <div class="sec">
-    <div class="sec-head"><span class="no">4</span><h2>维度3 季度线下客户覆盖量和客户服务工时</h2><span class="note"><a href="detail.html#dim3" style="color:#0e9fb0;text-decoration:none;font-weight:600">查看详细数据 →</a> ｜ 权重20% · 刘翱搏30% · 二部全国47人</span></div>
+    <div class="sec-head"><span class="no">4</span><h2>维度3 季度线下客户覆盖量和客户服务工时</h2><span class="note"><a href="detail.html#dim3">查看详细数据 →</a> ｜ 权重20% · 刘翱搏30% · 二部全国47人</span></div>
     <div class="card">
       <table>
         <tr><th>全国位次</th><th>成员</th><th class="num">季度覆盖完成率</th><th class="num">季度工时完成率</th><th class="num">季度完成率</th><th class="num">维度得分</th></tr>
-        <tr><td><span class="rankchip">1</span></td><td>刘翱搏</td><td class="num hi">100.6%</td><td class="num warn">89.4%</td><td class="num hi">95.01%</td><td class="num">100.00</td></tr>
-        <tr><td><span class="rankchip">7</span></td><td>孟旭</td><td class="num warn">73.1%</td><td class="num warn">87.2%</td><td class="num hi">80.16%</td><td class="num">91.30</td></tr>
-        <tr><td><span class="rankchip">11</span></td><td>陈开洪</td><td class="num warn">73.2%</td><td class="num warn">81.7%</td><td class="num warn">77.41%</td><td class="num">90.00</td></tr>
-        <tr><td><span class="rankchip">14</span></td><td>林汉敏</td><td class="num warn">72.0%</td><td class="num warn">81.7%</td><td class="num warn">76.83%</td><td class="num">85.46</td></tr>
-        <tr><td><span class="rankchip">24</span></td><td>罗杰<span class="tag warn">封顶</span></td><td class="num lo">68.7%</td><td class="num warn">78.9%</td><td class="num warn">73.77%</td><td class="num">60.00</td></tr>
-        <tr><td><span class="rankchip">29</span></td><td>马苑婷</td><td class="num warn">73.3%</td><td class="num warn">70.6%</td><td class="num warn">71.91%</td><td class="num">46.46</td></tr>
-        <tr><td><span class="rankchip">37</span></td><td>胡一东</td><td class="num warn">72.0%</td><td class="num lo">66.7%</td><td class="num warn">69.33%</td><td class="num">40.08</td></tr>
+        <tr><td><span class="rankchip">1</span></td><td>刘翱搏</td><td class="num hi">100.6%</td><td class="num mid">89.4%</td><td class="num hi">95.01%</td><td class="num">100.00</td></tr>
+        <tr><td><span class="rankchip">7</span></td><td>孟旭</td><td class="num mid">73.1%</td><td class="num mid">87.2%</td><td class="num hi">80.16%</td><td class="num">91.30</td></tr>
+        <tr><td><span class="rankchip">11</span></td><td>陈开洪</td><td class="num mid">73.2%</td><td class="num mid">81.7%</td><td class="num mid">77.41%</td><td class="num">90.00</td></tr>
+        <tr><td><span class="rankchip">14</span></td><td>林汉敏</td><td class="num mid">72.0%</td><td class="num mid">81.7%</td><td class="num mid">76.83%</td><td class="num">85.46</td></tr>
+        <tr><td><span class="rankchip">24</span></td><td>罗杰<span class="tag warn">封顶</span></td><td class="num lo">68.7%</td><td class="num mid">78.9%</td><td class="num mid">73.77%</td><td class="num">60.00</td></tr>
+        <tr><td><span class="rankchip">29</span></td><td>马苑婷</td><td class="num mid">73.3%</td><td class="num mid">70.6%</td><td class="num mid">71.91%</td><td class="num">46.46</td></tr>
+        <tr><td><span class="rankchip">37</span></td><td>胡一东</td><td class="num mid">72.0%</td><td class="num lo">66.7%</td><td class="num mid">69.33%</td><td class="num">40.08</td></tr>
       </table>
-      <div class="foot" style="margin-top:12px"><b>口径：</b>覆盖（不去重）与工时各占50%，二部全国47人排名；季度完成率=7月、8月简单平均；前20%=10人90–100分，其后各5人，后50%22人0–50分；罗杰全国第24/47（后50%）触发高职级封顶≤60分。</div>
+      <div class="foot" style="margin-top:12px"><b>口径：</b>覆盖（不去重）与工时各占50%，二部全国47人排名；季度完成率=7月、8月加总平均；前20%=10人90–100分，其后各5人，后50%22人0–50分；罗杰全国第24/47（后50%）触发高职级封顶≤60分。</div>
     </div>
   </div>
 
@@ -255,7 +250,7 @@
       </div>
       <div class="warn-item">
         <div class="warn-icon">!</div>
-        <p><b>马苑婷</b>：维度2（续约目标完成率）垫底（72.7%）、维度3（季度线下客户覆盖量和客户服务工时）后50%（全国第29）——综合得分38.40为7人最低，为主要风险点。</p>
+        <p><b>马苑婷</b>：维度2（续约目标完成率）垫底（72.7%）、维度3（季度线下客户覆盖量和客户服务工时）后50%（全国第29）——综合得分37.29为7人最低，为主要风险点。</p>
       </div>
       <div class="warn-item">
         <div class="warn-icon">!</div>
@@ -271,7 +266,7 @@
   <!-- 页脚 -->
   <div class="foot">
     <b>说明：</b>维度4（AI深度服务）、维度5（AI产出）、维度6（OK币）、维度7（月考）数据待到位，当前综合得分为维度1/2/3合计（满分70），完整总分待补齐后更新。<br>
-    <b>排名范围：</b>维度1/2 南粤二区内部排名；维度3 客户成功二部全国排名。<br>
+    <b>排名范围：</b>维度1/2 南粤二区内部排名；维度3 客户成功二部全国排名（47人）。<br>
     <b>数据截止：</b>维度1 2026-08-12 · 维度2 2026-08-05 · 维度3 2026-08-12 ｜ 生成：2026-08-13 ｜ 计算口径详见规则确认文件，全部可溯源。
   </div>
 
